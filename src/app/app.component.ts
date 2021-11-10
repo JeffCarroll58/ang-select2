@@ -1,4 +1,4 @@
-import { Component, VERSION } from '@angular/core';
+import {Component, OnInit, VERSION} from '@angular/core';
 
 interface Language {
   id: number;
@@ -10,7 +10,7 @@ interface Language {
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
+export class AppComponent implements OnInit{
   name = 'Angular ' + VERSION.major;
   languages: Language[] =[];
   selectedLanguage=3;
@@ -25,6 +25,10 @@ export class AppComponent  {
     ];
 
 
+  }
+
+  ngOnInit() {
+    console.log('~ AppComponent');
   }
 
   onAddLanguage(){
